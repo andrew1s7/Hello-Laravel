@@ -15,12 +15,17 @@ $nuevo = Producto::where('id', 2)->get();
 //print_r($nuevo);
 
 //sin el foreach da error
-
+//https://norvicsoftware.com/vistas-y-rutas-en-laravel-8/
 foreach ($nuevo as $nuevo => $nombre) {
     echo "<br>";
     echo $nombre->nombre;
-} ?>
+    echo "<br> <h2>Encriptado:</h2> ";
+    //Encriptacion en bcrypt
+    //https://www.geeksforgeeks.org/how-to-use-bcrypt-for-hashing-passwords-in-php/
+    echo password_hash($nombre->nombre, PASSWORD_DEFAULT);
+    echo "<br>";
 
+} ?>
 @auth
     ESTAS LOGUEADO
     <h4>Bienvenido . {{ auth()->user()->name }} con correo {{ auth()->user()->email }}</h4
