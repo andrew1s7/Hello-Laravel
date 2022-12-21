@@ -24,7 +24,9 @@ Route::get('hola', function () {
 
 //*********************************************** */
 Route::get('/nuevo',[ProductoController::class,'nuevo']);
+
 Route::redirect('/n','/nuevo');
+
 
 Route::get('/all', [ProductoController::class,'todos'] );
 
@@ -35,6 +37,18 @@ Route::get('/where', [ProductoController::class,'where'] );
 Route::get('/actualizar', [ProductoController::class,'update'] );
 
 Route::get('/borrar', [ProductoController::class,'del'] );
+
+//Route::get('/redirigir/{1}', [ProductoController::class,'del'] );
+
+//manda un post en la variable $id a la vista hola
+Route::get('/redirigir/{numerox}', function ($id) {
+    return view('hola', ['id' => $id]);
+});//averiguar luego inyeccion de dependencias
+
+
+
+
+
 
 //************************************************* */
 
