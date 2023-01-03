@@ -26,6 +26,8 @@ foreach ($nuevo as $nuevo => $nombre) {
     echo "<br>";
 
 } ?>
+
+//eloquent
 @auth
     ESTAS LOGUEADO
     <h4>Bienvenido . {{ auth()->user()->name }} con correo {{ auth()->user()->email }}</h4
