@@ -16,6 +16,7 @@ class ProductoController extends Controller
         $product->nombre="Usuario";
         $product->intereses="2.6689898";
         $product->cantidadsinsigno="95";
+        $product->algoo="algo";
         $product->save();
         echo "nuevo usuario creado";
     }
@@ -30,7 +31,8 @@ class ProductoController extends Controller
     }
     public function where()
     {
-        return Producto::where("nombre","like","a%")->get();
+        return "holaaa";
+        //return Producto::where("nombre","like","a%")->get();
     }
     public function update()
     {
